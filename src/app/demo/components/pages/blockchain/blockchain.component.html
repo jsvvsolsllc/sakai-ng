@@ -1,0 +1,37 @@
+<div class="grid">
+
+  <div class="col-12 md:col-6">
+    <div class="card p-fluid">
+      <h5>Connect MetamasK</h5>
+      <div class="field grid">
+        <p-button 
+                label="{{ accountConnectedToBlockchain ? 'Connected' : 'Connect to MetaMask' }}" 
+                (onClick)="connectAndLoadData()" 
+                [ngClass]="{'p-button-success': accountConnectedToBlockchain}"
+            ></p-button>
+      </div>
+      <div class="field grid">
+        <p *ngIf="account">Account: {{ account }}</p>
+      </div>
+      <div class="field grid">
+        <p *ngIf="totalSupply">Total Supply: {{ totalSupply }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12 md:col-6">
+
+
+    <div class="card p-fluid">
+      <h5>Grid</h5>
+      <div class="p-formgrid grid">
+
+        <div class="field col">
+          <label htmlFor="name2">Name</label>
+          <input pInputText id="name2" type="text" />
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
