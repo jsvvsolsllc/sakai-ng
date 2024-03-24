@@ -33,16 +33,19 @@ export class BlockchainComponent implements OnInit{
     this.blockchainService.connectAccount().then(() => {
       this.accountConnectedToBlockchain= true;
       this.blockchainService.loadContract();
-      this.blockchainService.getTotalSupply().subscribe({
-        next: (supply) => {
-          this.totalSupply = supply;
-          console.log('Total Supply:', this.totalSupply);
-        },
-        error: (error) => console.error(error)
-      });
     });
   }
- 
+
+  loadTotalSupply(){
+    this.blockchainService.getTotalSupply().subscribe({
+      next: (supply) => {
+        this.totalSupply = supply;
+        console.log('Total Supply:', this.totalSupply);
+      },
+      error: (error) => console.error(error)
+    });
+  }
+  
  
 
 }
